@@ -7,8 +7,10 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useAuth, useBookings, useContent, useUI } from '../../store';
-import { Button, Card, Badge } from '../../components/ui';
-import { designSystem } from '../../styles/designSystem';
+import { Button } from '../../components/ui/Button';
+import { Card } from '../../components/ui/Card';
+import { Badge } from '../../components/ui/Badge';
+import designSystem from '../../styles/designSystem';
 import {
   LionIcon, HealingHandsIcon, CalendarIcon, BookIcon,
   AudioIcon, VideoIcon, ClockIcon, CheckIcon,
@@ -31,6 +33,25 @@ export const ClientPortal: React.FC = () => {
 
   const colors = designSystem.colors;
   const typography = designSystem.typography;
+
+  const colorsArr = designSystem.colors;
+
+  // Navigation tabs
+  const navTabs = [
+    { id: 'dashboard' as const, label: 'Dashboard', icon: <LionIcon /> },
+    { id: 'appointments' as const, label: 'Appointments', icon: <CalendarIcon /> },
+    { id: 'resources' as const, label: 'Resources', icon: <BookIcon /> },
+    { id: 'voice-notes' as const, label: 'Voice Notes', icon: <AudioIcon /> },
+    { id: 'restoration' as const, label: 'My Restoration', icon: <HealingHandsIcon /> },
+  ];
+
+  // Quick actions
+  const quickActions = [
+    { icon: <CalendarIcon />, label: 'Book Session', action: () => navigate('/book'), color: colorsArr.riverMidnight[900] },
+    { icon: <AudioIcon />, label: 'Voice Note', action: () => navigate('/client/voice-notes'), color: colorsArr.healingGreen[700] },
+    { icon: <BookIcon />, label: 'Resources', action: () => navigate('/client/resources'), color: colorsArr.lionGold[600] },
+    { icon: <HealingHandsIcon />, label: 'My Plan', action: () => navigate('/client/restoration-plans'), color: colorsArr.ancestralRed },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
@@ -111,17 +132,12 @@ export const ClientPortal: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Navigation Tabs */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="flex flex-wrap gap-2 mb-8 border-b border-riverMidnight border-opacity-20">
-          {[{ id: 'dashboard', label: 'Dashboard', icon: <LionIcon /> },
-            { id: 'appointments', label: 'Appointments', icon: <CalendarIcon /> },
-            { id: 'resources', label: 'Resources', icon: <BookIcon /> },
-            { id: 'voice-notes', label: 'Voice Notes', icon: <AudioIcon /> },
-            { id: 'restoration', label: 'My Restoration', icon: <HealingHandsIcon /> }]
-            .map(tab => (
-              <Button key={tab.id} variant={activeTab === tab.id ? 'primary' : 'ghost'} size="sm" onClick={() => setActiveTab(tab.id as any)} startIcon={tab.icon} className="mb-2">
-                {tab.label}
-                {tab.id === 'appointments' && upcomingBookings.length > 0 && <Badge variant="number" size="sm" className="ml-2">{upcomingBookings.length}</Badge>}
-              </Button>
-            ))}
+          {navTabs.map(tab => (
+            <Button key={tab.id} variant={activeTab === tab.id ? 'primary' : 'ghost'} size="sm" onClick={() => setActiveTab(tab.id as any)} startIcon={tab.icon} className="mb-2">
+              {tab.label}
+              {tab.id === 'appointments' && upcomingBookings.length > 0 && <Badge variant="number" size="sm" className="ml-2">{upcomingBookings.length}</Badge>}
+            </Button>
+          ))}
         </motion.div>
 
         {/* Tab Content */}
@@ -145,18 +161,14 @@ export const ClientPortal: React.FC = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mb-8">
                 <h3 className={typography.h3.className + ' mb-4'} style={{ color: colors.riverMidnight }}>Quick Actions</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  [{ icon: <CalendarIcon />, label: 'Book Session', action: () => navigate('/book'), color: colors.riverMidnight[900] },
-                    { icon: <AudioIcon />, label: 'Voice Note', action: () => navigate('/client/voice-notes'), color: colors.healingGreen[700] },
-                    { icon: <BookIcon />, label: 'Resources', action: () => navigate('/client/resources'), color: colors.lionGold[600] },
-                    { icon: <HealingHandsIcon />, label: 'My Plan', action: () => navigate('/client/restoration-plans'), color: colors.ancestralRed }]
-                    .map((action, index) => (
-                      <Card key={index} variant="action" className="p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" onClick={action.action} style={{ backgroundColor: action.color }}>
-                        <motion.div whileHover={{ scale: 1.05 }} className="text-white">
-                          <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">{action.icon}</div>
-                          <p className={typography.body.className + ' font-medium'}>{action.label}</p>
-                        </motion.div>
-                      </Card>
-                    ))}
+                  {quickActions.map((action, index) => (
+                    <Card key={index} variant="action" className="p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" onClick={action.action} style={{ backgroundColor: action.color }}>
+                      <motion.div whileHover={{ scale: 1.05 }} className="text-white">
+                        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">{action.icon}</div>
+                        <p className={typography.body.className + ' font-medium'}>{action.label}</p>
+                      </motion.div>
+                    </Card>
+                  ))}
                 </div>
               </motion.div>
               {upcomingBookings.length > 0 && (
@@ -209,13 +221,11 @@ export const ClientPortal: React.FC = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                 <h2 className={typography.h2.className + ' mb-6'} style={{ color: colors.riverMidnight }}>Your Appointments</h2>
                 <div className="flex gap-2 mb-6 border-b border-riverMidnight border-opacity-20">
-                  [{ id: 'upcoming', label: 'Upcoming', count: upcomingBookings.length },
-                    { id: 'past', label: 'Past', count: pastBookings.length }]
-                    .map(tab => (
-                      <Button key={tab.id} variant={activeTab === tab.id ? 'primary' : 'ghost'} size="sm" className="mb-2">
-                        {tab.label}<Badge variant="number" size="sm" className="ml-2">{tab.count}</Badge>
-                      </Button>
-                    ))}
+                  {appointmentTabs.map(tab => (
+                    <Button key={tab.id} variant={activeTab === tab.id ? 'primary' : 'ghost'} size="sm" className="mb-2">
+                      {tab.label}<Badge variant="number" size="sm" className="ml-2">{tab.count}</Badge>
+                    </Button>
+                  ))}
                 </div>
                 <div className="space-y-4">
                   {upcomingBookings.length === 0 ? (
@@ -334,3 +344,9 @@ export const ClientPortal: React.FC = () => {
 };
 
 export default ClientPortal;
+
+// Appointment tabs type
+const appointmentTabs = [
+  { id: 'upcoming', label: 'Upcoming' },
+  { id: 'past', label: 'Past' },
+];

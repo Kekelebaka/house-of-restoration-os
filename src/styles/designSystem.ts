@@ -10,7 +10,7 @@ import { css } from '@emotion/react';
 // Inspired by: River Midnight, Lion Gold, Healing Green, Stone Ivory
 // ============================================
 
-export const colors = {
+const colors = {
   // Primary Brand Colors
   riverMidnight: {
     50: '#E8ECF1',
@@ -189,7 +189,7 @@ export const colors = {
 // Clean modern sans-serif for body
 // ============================================
 
-export const typography = {
+const typography = {
   // Font Families
   fontFamily: {
     serif: `'Playfair Display', 'Georgia', serif`,
@@ -367,7 +367,7 @@ export const typography = {
 // Based on 4px base unit
 // ============================================
 
-export const spacing = {
+const spacing = {
   px: '1px',
   '0': '0',
   '1': '0.25rem',   // 4px
@@ -393,7 +393,7 @@ export const spacing = {
 // BORDER RADIUS
 // ============================================
 
-export const borderRadius = {
+const borderRadius = {
   none: '0',
   sm: '0.125rem',   // 2px
   md: '0.25rem',    // 4px
@@ -409,7 +409,7 @@ export const borderRadius = {
 // Subtle, elegant shadows that enhance depth without being distracting
 // ============================================
 
-export const shadows = {
+const shadows = {
   none: '0 0 rgba(0, 0, 0, 0)',
   sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
   md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
@@ -426,7 +426,7 @@ export const shadows = {
 // Z-INDEX SCALE
 // ============================================
 
-export const zIndex = {
+const zIndex = {
   auto: 'auto',
   '0': 0,
   '10': 10,
@@ -448,7 +448,7 @@ export const zIndex = {
 // TRANSITIONS & ANIMATIONS
 // ============================================
 
-export const transitions = {
+const transitions = {
   none: 'none',
   fast: '150ms ease',
   normal: '200ms ease',
@@ -460,7 +460,7 @@ export const transitions = {
   easeInOut: '200ms ease-in-out',
 } as const;
 
-export const animations = {
+const animations = {
   fadeIn: 'fadeIn 300ms ease-out',
   fadeOut: 'fadeOut 300ms ease-in',
   slideUp: 'slideUp 300ms ease-out',
@@ -482,7 +482,7 @@ export const animations = {
 
 import { keyframes } from '@emotion/react';
 
-export const keyframeAnimations = {
+const keyframeAnimations = {
   fadeIn: keyframes`
     from { opacity: 0; }
     to { opacity: 1; }
@@ -584,7 +584,7 @@ export const keyframeAnimations = {
 // Mobile-first approach
 // ============================================
 
-export const breakpoints = {
+const breakpoints = {
   xs: '320px',
   sm: '640px',
   md: '768px',
@@ -598,7 +598,7 @@ export const breakpoints = {
 // MEDIA QUERIES
 // ============================================
 
-export const mediaQueries = {
+const mediaQueries = {
   xs: `@media (min-width: ${breakpoints.xs})`,
   sm: `@media (min-width: ${breakpoints.sm})`,
   md: `@media (min-width: ${breakpoints.md})`,
@@ -622,7 +622,7 @@ export const mediaQueries = {
 // LAYOUT CONSTANTS
 // ============================================
 
-export const layout = {
+const layout = {
   maxWidth: {
     xs: '20rem',    // 320px
     sm: '24rem',    // 384px
@@ -662,7 +662,7 @@ export const layout = {
 // THEME CONFIGURATION
 // ============================================
 
-export const theme = {
+const theme = {
   colors,
   typography,
   spacing,
@@ -680,7 +680,7 @@ export const theme = {
 // EMOTION UTILITIES
 // ============================================
 
-export const cssUtils = {
+const cssUtils = {
   // Flex utilities
   flex: (direction: 'row' | 'column' = 'row', align: string = 'center', justify: string = 'center') => css({
     display: 'flex',

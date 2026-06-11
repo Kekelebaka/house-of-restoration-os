@@ -9,7 +9,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useWhatsApp } from '../../store';
 import { Button, Card } from '../ui';
-import { designSystem } from '../../styles/designSystem';
+import designSystem from '../../styles/designSystem';
 import { LionIcon, HealingHandsIcon, RiverIcon, WhatsAppIcon } from '../ui/Icons';
 
 // ============================================

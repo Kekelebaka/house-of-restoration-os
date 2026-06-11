@@ -8,19 +8,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors, spacing, typography, borderRadius, layout, shadows } from '../../styles/designSystem';
 import {
-  CalendarIcon,
   UserIcon,
   MicrophoneIcon,
   CircleIcon,
   LionIcon,
-  BookIcon,
-  ChartIcon,
-  BuildingIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   SettingsIcon,
   BellIcon,
-  LogoutIcon,
 } from '../ui/Icons';
 
 // ============================================

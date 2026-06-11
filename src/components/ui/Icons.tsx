@@ -941,30 +941,127 @@ export const BellIcon: React.FC<IconProps> = ({
 };
 
 // ============================================
+// BOOK ICON
+// ============================================
+
+const BookIcon: React.FC<IconProps> = ({
+  size = 24,
+  color = colors.riverMidnight[900],
+  opacity = 1,
+  className,
+  style,
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ opacity, ...style }}
+    >
+      <path d="M4 19V5C4 4.46957 4.21071 3.96086 4.58579 3.58579C4.96086 3.21071 5.46957 3 6 3H18C18.5304 3 19.0391 3.21071 19.4142 3.58579C19.7893 3.96086 20 4.46957 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19Z" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 15H20" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+};
+
+// ============================================
+// AUDIO ICON
+// ============================================
+
+const AudioIcon: React.FC<IconProps> = ({
+  size = 24,
+  color = colors.healingGreen[700],
+  opacity = 1,
+  className,
+  style,
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ opacity, ...style }}
+    >
+      <path d="M9 17V7" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 7L15 11" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15 11L9 15" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18 11C18 15.4183 14.4183 19 10 19C5.58172 19 2 15.4183 2 11C2 6.58172 5.58172 3 10 3" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M22 11C22 15.4183 18.4183 19 14 19" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+};
+
+// ============================================
+// VIDEO ICON
+// ============================================
+
+const VideoIcon: React.FC<IconProps> = ({
+  size = 24,
+  color = colors.royalBlue[600],
+  opacity = 1,
+  className,
+  style,
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ opacity, ...style }}
+    >
+      <path d="M22 8L2 8C2 8 2 12 2 12C2 12 2 16 2 16L22 16C22 16 22 12 22 12C22 12 22 8 22 8Z" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16 12L8 14.5V7.5L16 10" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+};
+
+// ============================================
+// UPLOAD ICON
+// ============================================
+
+const UploadIcon: React.FC<IconProps> = ({
+  size = 24,
+  color = colors.lionGold[600],
+  opacity = 1,
+  className,
+  style,
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ opacity, ...style }}
+    >
+      <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M17 8L12 3L7 8" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 3V15" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+};
+
+// ============================================
 // EXPORT ALL ICONS
 // ============================================
 
+// Re-export new icons and aliases
 export {
-  LionIcon as Lion,
-  RiverIcon as River,
-  HandsIcon as HealingHands,
-  CircleIcon as RestorationCircle,
-  WhatsAppIcon as WhatsApp,
-  UserIcon as User,
-  CalendarIcon as Calendar,
-  ClockIcon as Clock,
-  MicrophoneIcon as Microphone,
-  PlayIcon as Play,
-  PauseIcon as Pause,
-  CheckIcon as Check,
-  CloseIcon as Close,
-  ChevronRightIcon as ChevronRight,
-  ChevronLeftIcon as ChevronLeft,
-  ChevronDownIcon as ChevronDown,
-  ChevronUpIcon as ChevronUp,
-  MoreVerticalIcon as MoreVertical,
-  SearchIcon as Search,
-  FilterIcon as Filter,
-  SettingsIcon as Settings,
-  BellIcon as Bell,
+  HandsIcon as HealingHandsIcon,
+  CloseIcon as XIcon,
+  BookIcon,
+  AudioIcon,
+  VideoIcon,
+  UploadIcon,
 };

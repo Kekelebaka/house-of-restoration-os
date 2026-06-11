@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useWhatsApp, useBookings, useUI } from '../../store';
 import { Button, Card, Badge } from '../ui';
-import { designSystem } from '../../styles/designSystem';
+import designSystem from '../../styles/designSystem';
 import { LionIcon, HealingHandsIcon, RiverIcon, CheckIcon, XIcon, ClockIcon, WhatsAppIcon } from '../ui/Icons';
 
 // ============================================
