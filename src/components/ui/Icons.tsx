@@ -1056,6 +1056,52 @@ const UploadIcon: React.FC<IconProps> = ({
 // EXPORT ALL ICONS
 // ============================================
 
+// ============================================
+// EYE ICON
+// ============================================
+
+export const EyeIcon: React.FC<IconProps> = ({ size = 24, color = colors.riverMidnight[900], opacity = 1, className, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={{ opacity, ...style }}>
+    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="12" cy="12" r="3" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+// ============================================
+// HEART ICON
+// ============================================
+
+export const HeartIcon: React.FC<IconProps> = ({ size = 24, color = colors.ancestralRed[600], opacity = 1, className, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={{ opacity, ...style }}>
+    <path d="M20.84 4.61C19.58 3.35 17.49 3.35 16.24 4.61L12 8.85L7.76 4.61C6.5 3.35 4.42 3.35 3.16 4.61C1.9 5.87 1.9 7.95 3.16 9.21L12 18.05L20.84 9.21C22.1 7.95 22.1 5.87 20.84 4.61Z" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+// ============================================
+// SHARE ICON
+// ============================================
+
+export const ShareIcon: React.FC<IconProps> = ({ size = 24, color = colors.riverMidnight[900], opacity = 1, className, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={{ opacity, ...style }}>
+    <circle cx="18" cy="5" r="3" stroke={color} strokeWidth={1.5}/>
+    <circle cx="6" cy="12" r="3" stroke={color} strokeWidth={1.5}/>
+    <circle cx="18" cy="19" r="3" stroke={color} strokeWidth={1.5}/>
+    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke={color} strokeWidth={1.5}/>
+    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke={color} strokeWidth={1.5}/>
+  </svg>
+);
+
+// ============================================
+// ARROW LEFT ICON
+// ============================================
+
+export const ArrowLeftIcon: React.FC<IconProps> = ({ size = 24, color = colors.riverMidnight[900], opacity = 1, className, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={{ opacity, ...style }}>
+    <path d="M19 12H5" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 19L5 12L12 5" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 // Re-export new icons and aliases
 export {
   HandsIcon as HealingHandsIcon,
