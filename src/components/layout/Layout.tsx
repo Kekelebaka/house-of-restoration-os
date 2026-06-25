@@ -6,9 +6,9 @@
 import { Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { colors, spacing, layout, typography, mediaQueries } from '../../styles/designSystem';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { Sidebar } from './Sidebar';
+import Header from './Header';
+import Footer from './Footer';
+import Sidebar from './Sidebar';
 
 // ============================================
 // LAYOUT VARIANTS

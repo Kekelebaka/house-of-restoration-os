@@ -5,7 +5,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Layout } from './components/layout/Layout';
+import Layout from './components/layout/Layout';
 import { LoadingScreen } from './components/common/LoadingScreen';
 import { colors } from './styles/designSystem';
 
