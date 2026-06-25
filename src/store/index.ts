@@ -5,7 +5,7 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { User, Client, Booking, WhatsAppIntake, VoiceNote, ContentItem, Retreat, CorporateBooking, KPIData } from '../types';
+import { User, Booking, WhatsAppIntake, VoiceNote, ContentItem, Retreat, CorporateBooking, KPIData } from '../types';
 
 // ============================================
 // TYPES

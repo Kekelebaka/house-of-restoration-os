@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors, spacing, typography, borderRadius, shadows, layout, mediaQueries } from '../../styles/designSystem';
 import { Button, IconButton } from '../ui/Button';
-import { WhatsAppIcon, UserIcon, BellIcon, MenuIcon, CloseIcon, LionIcon } from '../ui/Icons';
+import { WhatsAppIcon, UserIcon, BellIcon, CloseIcon, LionIcon } from '../ui/Icons';
 import { WhatsAppButton } from '../ui/Button';
 
 // ============================================
